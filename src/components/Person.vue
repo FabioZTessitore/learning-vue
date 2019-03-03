@@ -1,12 +1,22 @@
 <template>
   <div class="person">
-    <p>I'm a Person</p>
+    <p>I'm {{name}} and I'm {{age}} years old!</p>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Person',
+  data: function () {
+    return {
+      name: 'Max'
+    }
+  },
+  computed: {
+    age: function () {
+      return Math.floor(Math.random()*30);
+    }
+  },
   props: {
   }
 }
