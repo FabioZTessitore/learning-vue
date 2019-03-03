@@ -49,3 +49,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### Step 3: Data and Computed properties
 
 #### Step 4: Props and children (slot)
+
+#### Step 5: Put data into App and binding to component props

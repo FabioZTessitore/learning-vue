@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <h1>I'm a Vue App</h1>
-    <Person name="Max" age="28" />
-    <Person name="Manu" age="29">My Hobbies: Racing</Person>
-    <Person name="Stephanie" age="26" />
+    <Person :name="persons[0].name" :age="persons[0].age" />
+    <Person :name="persons[1].name" :age="persons[1].age">My Hobbies: Racing</Person>
+    <Person :name="persons[2].name" :age="persons[2].age" />
   </div>
 </template>
 
@@ -12,6 +12,15 @@ import Person from './components/Person.vue'
 
 export default {
   name: 'app',
+  data: function () {
+    return {
+      persons: [
+        { name: 'Max', age: 28 },
+        { name: 'Manu', age: 29 },
+        { name: 'Stephanie', age: 26 }
+      ]
+    };
+  },
   components: {
     Person
   }
