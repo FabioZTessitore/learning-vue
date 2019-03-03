@@ -61,3 +61,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### Step 9: Two way data binding (Model)
 
 #### Step 10: Styling
+
+#### Step 11: Rendering content conditionally (v-if)

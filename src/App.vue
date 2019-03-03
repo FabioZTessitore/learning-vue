@@ -1,21 +1,23 @@
 <template>
   <div id="app">
     <h1>I'm a Vue App</h1>
-    <button @click="switchNamesHandler('Maximilian')">Switch Names</button>
+    <button @click="togglePersons">Toggle Persons</button>
 
-    <Person
-      :name="persons[0].name"
-      :age="persons[0].age" />
+    <div v-if="showPersons">
+      <Person
+        :name="persons[0].name"
+        :age="persons[0].age" />
 
-    <Person
-      :name="persons[1].name"
-      :age="persons[1].age"
-      @switch-names="switchNamesHandler"
-      >My Hobbies: Racing</Person>
+      <Person
+        :name="persons[1].name"
+        :age="persons[1].age"
+        @switch-names="switchNamesHandler"
+        >My Hobbies: Racing</Person>
 
-    <Person
-      :name="persons[2].name"
-      :age="persons[2].age" />
+      <Person
+        :name="persons[2].name"
+        :age="persons[2].age" />
+    </div>
   </div>
 </template>
 
@@ -30,7 +32,8 @@ export default {
         { name: 'Max', age: 28 },
         { name: 'Manu', age: 29 },
         { name: 'Stephanie', age: 26 }
-      ]
+      ],
+      showPersons: false
     };
   },
   methods: {
@@ -40,6 +43,9 @@ export default {
         { name: 'Manu', age: 29 },
         { name: 'Stephanie', age: 27 }
       ];
+    },
+    togglePersons: function () {
+      this.showPersons = !this.showPersons;
     }
   },
   components: {
