@@ -1,22 +1,17 @@
 <template>
   <div id="app">
     <h1>I'm a Vue App</h1>
+
     <button @click="togglePersons">Toggle Persons</button>
 
     <div v-if="showPersons">
-      <Person
-        :name="persons[0].name"
-        :age="persons[0].age" />
-
-      <Person
-        :name="persons[1].name"
-        :age="persons[1].age"
-        @switch-names="switchNamesHandler"
-        >My Hobbies: Racing</Person>
-
-      <Person
-        :name="persons[2].name"
-        :age="persons[2].age" />
+      <Person v-for="(person, index) in persons"
+        :name="person.name"
+        :age="person.age"
+        :index="index"
+        :key="person.id"
+        @delete-person="deletePerson"
+        @change-name="changeNameHandler" />
     </div>
   </div>
 </template>
@@ -29,23 +24,25 @@ export default {
   data: function () {
     return {
       persons: [
-        { name: 'Max', age: 28 },
-        { name: 'Manu', age: 29 },
-        { name: 'Stephanie', age: 26 }
+        { id: '1', name: 'Max', age: 28 },
+        { id: '2', name: 'Manu', age: 29 },
+        { id: '3', name: 'Stephanie', age: 26 }
       ],
       showPersons: false
     };
   },
   methods: {
-    switchNamesHandler: function (newName) {
-      this.persons = [
-        { name: newName, age: 28 },
-        { name: 'Manu', age: 29 },
-        { name: 'Stephanie', age: 27 }
-      ];
+    changeNameHandler: function (newName, id) {
+      const person = this.persons.find(person => {
+        return id === person.id;
+      });
+      person.name = newName;
     },
     togglePersons: function () {
       this.showPersons = !this.showPersons;
+    },
+    deletePerson: function (personIndex) {
+      this.persons.splice(personIndex, 1);
     }
   },
   components: {

@@ -1,24 +1,26 @@
 <template>
   <div class="person">
-    <p @click="$emit('switch-names', 'Max!')">I'm {{name}} and I'm {{age}} years old!</p>
-    <p><slot></slot></p>
+    <div @click="$emit('delete-person', index)">
+      <p>I'm {{name}} and I'm {{age}} years old!</p>
+      <p><slot></slot></p>
+      <p>{{username}}</p>
+    </div>
     <p><input type="text" v-model="username"></p>
-    <p>{{username}}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Person',
-  props: [ 'name', 'age' ],
+  props: [ 'name', 'age', 'index' ],
   data: function () {
     return {
-      username: ''
+      username: this.name
     };
   },
   watch: {
     username: function (newName, oldName) {
-      this.$emit('switch-names', newName);
+      this.$emit('switch-name', newName, this.$vnode.key);
     }
   }
 }
