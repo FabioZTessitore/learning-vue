@@ -1,10 +1,20 @@
 <template>
   <div id="app">
     <h1>I'm a Vue App</h1>
-    <button @click="switchNamesHandler">Switch Names</button>
-    <Person :name="persons[0].name" :age="persons[0].age" />
-    <Person :name="persons[1].name" :age="persons[1].age">My Hobbies: Racing</Person>
-    <Person :name="persons[2].name" :age="persons[2].age" />
+    <button @click="switchNamesHandler('Maximilian')">Switch Names</button>
+    <Person
+      :name="persons[0].name"
+      :age="persons[0].age" />
+
+    <Person
+      :name="persons[1].name"
+      :age="persons[1].age"
+      @switchNames="switchNamesHandler"
+      >My Hobbies: Racing</Person>
+
+    <Person
+      :name="persons[2].name"
+      :age="persons[2].age" />
   </div>
 </template>
 
@@ -23,9 +33,9 @@ export default {
     };
   },
   methods: {
-    switchNamesHandler: function () {
+    switchNamesHandler: function (newName) {
       this.persons = [
-        { name: 'Maximilian', age: 28 },
+        { name: newName, age: 28 },
         { name: 'Manu', age: 29 },
         { name: 'Stephanie', age: 27 }
       ];

@@ -1,6 +1,6 @@
 <template>
   <div class="person">
-    <p>I'm {{name}} and I'm {{age}} years old!</p>
+    <p @click="$emit('switchNames', 'Max!')">I'm {{name}} and I'm {{age}} years old!</p>
     <p><slot></slot></p>
   </div>
 </template>

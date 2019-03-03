@@ -55,3 +55,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### Step 6: Handling events
 
 #### Step 7: Updating data
+
+#### Step 8: Children emit event to parent
