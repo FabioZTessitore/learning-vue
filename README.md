@@ -53,3 +53,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### Step 5: Put data into App and binding to component props
 
 #### Step 6: Handling events
+
+#### Step 7: Updating data
