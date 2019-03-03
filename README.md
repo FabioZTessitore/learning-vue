@@ -47,3 +47,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### Step 2: Cleaning up and a simple component (Person)
 
 #### Step 3: Data and Computed properties
+
+#### Step 4: Props and children (slot)

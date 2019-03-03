@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <h1>I'm a Vue App</h1>
-    <Person />
-    <Person />
-    <Person />
+    <Person name="Max" age="28" />
+    <Person name="Manu" age="29">My Hobbies: Racing</Person>
+    <Person name="Stephanie" age="26" />
   </div>
 </template>
 
