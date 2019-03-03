@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <Layout>
-      Test
+      <BurgerBuilder />
     </Layout>
   </div>
 </template>
 
 <script>
 import Layout from './components/Layout'
+import BurgerBuilder from './containers/BurgerBuilder'
+
 export default {
   name: 'app',
   components: {
-    Layout
+    Layout,
+    BurgerBuilder
   }
 }
 </script>

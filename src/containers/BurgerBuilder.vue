@@ -1,9 +1,7 @@
 <template>
   <Aux>
-    <div>Toolbar, SideDrawer, Backdrop</div>
-    <main class="content">
-      <slot></slot>
-    </main>
+    <div>Burger</div>
+    <div>Build Controls</div>
   </Aux>
 </template>
 
@@ -11,7 +9,7 @@
 import Aux from '../hoc/Aux';
 
 export default {
-  name: 'Layout',
+  name: 'BurgerBuilder',
   components: {
     Aux
   }
@@ -20,7 +18,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.content {
-  margin-top: 16px;
-}
 </style>
