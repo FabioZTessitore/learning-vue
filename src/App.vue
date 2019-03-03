@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>I'm a Vue App</h1>
+    <button @click="switchNamesHandler">Switch Names</button>
     <Person :name="persons[0].name" :age="persons[0].age" />
     <Person :name="persons[1].name" :age="persons[1].age">My Hobbies: Racing</Person>
     <Person :name="persons[2].name" :age="persons[2].age" />
@@ -20,6 +21,11 @@ export default {
         { name: 'Stephanie', age: 26 }
       ]
     };
+  },
+  methods: {
+    switchNamesHandler: function () {
+      console.log('clicked');
+    }
   },
   components: {
     Person

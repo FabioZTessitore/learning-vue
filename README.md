@@ -51,3 +51,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### Step 4: Props and children (slot)
 
 #### Step 5: Put data into App and binding to component props
+
+#### Step 6: Handling events
