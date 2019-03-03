@@ -1,17 +1,19 @@
 <template>
   <Aux>
-    <div>Burger</div>
+    <Burger />
     <div>Build Controls</div>
   </Aux>
 </template>
 
 <script>
 import Aux from '../hoc/Aux';
+import Burger from '../components/Burger/Burger'
 
 export default {
   name: 'BurgerBuilder',
   components: {
-    Aux
+    Aux,
+    Burger
   }
 }
 </script>
