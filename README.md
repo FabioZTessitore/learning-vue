@@ -65,3 +65,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### Step 11: Rendering content conditionally (v-if)
 
 #### Step 12: Lists
+
+#### Step 13: Cleaning up
