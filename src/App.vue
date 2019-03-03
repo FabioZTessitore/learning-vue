@@ -9,7 +9,7 @@
     <Person
       :name="persons[1].name"
       :age="persons[1].age"
-      @switchNames="switchNamesHandler"
+      @switch-names="switchNamesHandler"
       >My Hobbies: Racing</Person>
 
     <Person

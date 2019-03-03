@@ -57,3 +57,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### Step 7: Updating data
 
 #### Step 8: Children emit event to parent
+
+#### Step 9: Two way data binding (Model)
