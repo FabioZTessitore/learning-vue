@@ -2,6 +2,7 @@
   <div id="app">
     <h1>I'm a Vue App</h1>
     <button @click="switchNamesHandler('Maximilian')">Switch Names</button>
+
     <Person
       :name="persons[0].name"
       :age="persons[0].age" />
@@ -55,5 +56,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+button {
+  backgroundColor: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
 }
 </style>

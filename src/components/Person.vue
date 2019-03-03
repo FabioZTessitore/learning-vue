@@ -26,4 +26,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.person {
+  width: 60%;
+  margin: 2em auto;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #aaa;
+  padding: 16px;
+  text-align: center;
+}
 </style>
