@@ -49,7 +49,7 @@ body {
     transform: translate(-50%, -50%); }
     .main .content-box--text .title {
       font-size: 4rem;
-      letter-spacing: 4.95rem;
+      letter-spacing: 4.1rem;
       padding-left: .5rem;
       margin-bottom: 5rem;
       animation: moviInLeft .8s;
@@ -58,12 +58,6 @@ body {
       font-size: 10rem;
       margin-bottom: 5rem;
       animation: moviInRight .8s; }
-    .main .content-box--errors {
-      font-size: 3rem;
-      text-align: center;
-      color: orangered;
-      margin-bottom: 6rem;
-      visibility: hidden; }
     .main .content-box--data-input {
       padding-right: 4.95rem; }
       .main .content-box--data-input label {
@@ -76,4 +70,6 @@ body {
       .main .content-box--data-input .input-value {
         font-weight: bold;
         color: #8af;
-        margin: 0 2rem; }
+        display: inline-block;
+        min-width: 10rem;
+        text-align: center; }

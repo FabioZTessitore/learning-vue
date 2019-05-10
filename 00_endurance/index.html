@@ -12,28 +12,24 @@
 </head>
 
 <body>
-  <article class="main">
+  <article class="main" id="app">
 
     <div class="content-box">
 
       <div class="content-box--text">
         <h1 class="title">Endurance</h1>
-        <p class="result">HH : MM : SS</p>
-      </div>
-
-      <div class="content-box--errors">
-        <p class="error">Error goes here</p>
+        <p class="result">{{ ("0" + h).slice(-2) }} : {{ ("0" + m).slice(-2) }} : {{ ("0" + s).slice(-2) }}</p>
       </div>
 
       <div class="content-box--data-input">
-        <div class="input-box" id="cc">
+        <div class="input-box">
           <label for="carburante">Carburante: <span class="input-value">{{ CC }}</span> galloni</label>
-          <input type="range" min="0" max="3000" value="1500" v-on:input="changeCC" name="carburante" id="carburante">
+          <input type="range" min="0" max="1999" value="1000" v-on:input="changeCC" name="carburante" id="carburante">
         </div>
 
-        <div class="input-box" id="ch">
+        <div class="input-box">
           <label for="consumoh">Consumo Orario: <span class="input-value">{{ CH }}</span> galloni/h</label>
-          <input type="range" min="0" max="300" value="150" v-on:input="changeCH" name="consumoh" id="consumoh">
+          <input type="range" min="5" max="300" value="150" v-on:input="changeCH" name="consumoh" id="consumoh">
         </div>
       </div>
 
@@ -43,25 +39,34 @@
 
   <script>
   var cc = new Vue({
-    el: '#cc',
+    el: '#app',
     data: {
-      CC: 1500
+      CC: 1500,
+      CH: 150,
+      h: 0,
+      m: 0,
+      s: 0
     },
     methods: {
       changeCC: function (event) {
         this.CC = event.target.value;
-      }
-    }
-  });
+        this.calculateEndurance();
+      },
 
-  var ch = new Vue({
-    el: '#ch',
-    data: {
-      CH: 150
-    },
-    methods: {
       changeCH: function (event) {
         this.CH = event.target.value;
+        this.calculateEndurance();
+      },
+
+      calculateEndurance: function () {
+        var t = this.CC / this.CH;
+        this.h = Math.floor(t);
+        t -= this.h;
+        t *= 60;
+        this.m = Math.floor(t);
+        t -= this.m;
+        t *= 60;
+        this.s = Math.floor(t);
       }
     }
   });
