@@ -1,0 +1,33 @@
+@keyframes moviInLeft {
+  0% {
+    transform: translateX(-100px) skewX(0);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateX(20px) skewX(-25deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0) skewX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moviInRight {
+  0% {
+    transform: translateX(100px) skewX(0);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateX(-20px) skewX(25deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0) skewX(0);
+    opacity: 1;
+  }
+}

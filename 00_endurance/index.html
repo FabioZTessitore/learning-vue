@@ -10,25 +10,34 @@
 </head>
 
 <body>
-  <header>
+  <article class="main">
+
     <div class="content-box">
-      <h1 class="title">Endurance</h1>
-      <p class="result">HH : MM : SS</p>
-      <div class="errors">
+
+      <div class="content-box--text">
+        <h1 class="title">Endurance</h1>
+        <p class="result">HH : MM : SS</p>
       </div>
-      <div class="data-input">
-        <div class="input-carburante">
-          <label for="carburante">Carburante</label>
-          <input type="number" min="0" max="3000" name="carburante" id="carburante">
+
+      <div class="content-box--errors">
+        <p class="error">Error goes here</p>
+      </div>
+
+      <div class="content-box--data-input">
+        <div class="input-box">
+          <label for="carburante">Carburante: <span class="input-value">CC</span></label>
+          <input type="range" min="0" max="3000" name="carburante" id="carburante">
         </div>
 
-        <div class="input-consumoh">
-          <label for="consumoh">Consumo Orario</label>
-          <input type="number" min="0" max="300" name="consumoh" id="consumoh">
+        <div class="input-box">
+          <label for="consumoh">Consumo Orario: <span class="input-value">CH</span></label>
+          <input type="range" min="0" max="300" name="consumoh" id="consumoh">
         </div>
       </div>
+
     </div>
-  </header>
+
+  </article>
 </body>
 
 </html>
