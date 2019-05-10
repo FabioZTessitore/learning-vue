@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="css/style.css">
   <title>Endurance</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 
 <body>
@@ -24,20 +26,46 @@
       </div>
 
       <div class="content-box--data-input">
-        <div class="input-box">
-          <label for="carburante">Carburante: <span class="input-value">CC</span></label>
-          <input type="range" min="0" max="3000" name="carburante" id="carburante">
+        <div class="input-box" id="cc">
+          <label for="carburante">Carburante: <span class="input-value">{{ CC }}</span> galloni</label>
+          <input type="range" min="0" max="3000" value="1500" v-on:input="changeCC" name="carburante" id="carburante">
         </div>
 
-        <div class="input-box">
-          <label for="consumoh">Consumo Orario: <span class="input-value">CH</span></label>
-          <input type="range" min="0" max="300" name="consumoh" id="consumoh">
+        <div class="input-box" id="ch">
+          <label for="consumoh">Consumo Orario: <span class="input-value">{{ CH }}</span> galloni/h</label>
+          <input type="range" min="0" max="300" value="150" v-on:input="changeCH" name="consumoh" id="consumoh">
         </div>
       </div>
 
     </div>
 
   </article>
+
+  <script>
+  var cc = new Vue({
+    el: '#cc',
+    data: {
+      CC: 1500
+    },
+    methods: {
+      changeCC: function (event) {
+        this.CC = event.target.value;
+      }
+    }
+  });
+
+  var ch = new Vue({
+    el: '#ch',
+    data: {
+      CH: 150
+    },
+    methods: {
+      changeCH: function (event) {
+        this.CH = event.target.value;
+      }
+    }
+  });
+  </script>
 </body>
 
 </html>

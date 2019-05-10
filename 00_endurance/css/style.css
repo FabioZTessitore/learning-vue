@@ -75,4 +75,5 @@ body {
         margin-bottom: 4rem; }
       .main .content-box--data-input .input-value {
         font-weight: bold;
-        color: #8af; }
+        color: #8af;
+        margin: 0 2rem; }
