@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"> 
   <link rel="stylesheet" href="css/style.css">
   <title>Endurance</title>
 
@@ -26,7 +27,6 @@
           <label for="carburante">Carburante: <span class="input-value">{{ CC }}</span> galloni</label>
           <input type="range" min="0" max="1999" value="1000" v-on:input="changeCC" name="carburante" id="carburante">
         </div>
-
         <div class="input-box">
           <label for="consumoh">Consumo Orario: <span class="input-value">{{ CH }}</span> galloni/h</label>
           <input type="range" min="5" max="300" value="150" v-on:input="changeCH" name="consumoh" id="consumoh">
