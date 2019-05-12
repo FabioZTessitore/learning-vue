@@ -19,17 +19,17 @@
 
       <div class="content-box--text">
         <h1 class="title">Endurance</h1>
-        <p class="result">{{ ("0" + h).slice(-2) }} : {{ ("0" + m).slice(-2) }} : {{ ("0" + s).slice(-2) }}</p>
+        <p class="result">{{ hhh }} : {{ mm }} : {{ ss }}</p>
       </div>
 
       <div class="content-box--data-input">
         <div class="input-box">
           <label for="carburante">Carburante: <span class="input-value">{{ CC }}</span> galloni</label>
-          <input type="range" min="0" max="1999" value="1000" v-on:input="changeCC" name="carburante" id="carburante">
+          <input type="range" min="0" max="1999" v-bind:value="CC" v-on:input="changeCC" name="carburante" id="carburante">
         </div>
         <div class="input-box">
           <label for="consumoh">Consumo Orario: <span class="input-value">{{ CH }}</span> galloni/h</label>
-          <input type="range" min="5" max="300" value="150" v-on:input="changeCH" name="consumoh" id="consumoh">
+          <input type="range" min="5" max="300" v-bind:value="CH" v-on:input="changeCH" name="consumoh" id="consumoh">
         </div>
       </div>
 
@@ -41,11 +41,22 @@
   var cc = new Vue({
     el: '#app',
     data: {
-      CC: 1500,
+      CC: 1000,
       CH: 150,
-      h: 0,
-      m: 0,
+      h: 6,
+      m: 40,
       s: 0
+    },
+    computed: {
+      hhh: function () {
+        return this.threeChar(this.h);
+      },
+      mm: function () {
+        return this.twoChar(this.m);
+      },
+      ss: function () {
+        return this.twoChar(this.s);
+      },
     },
     methods: {
       changeCC: function (event) {
@@ -67,6 +78,13 @@
         t -= this.m;
         t *= 60;
         this.s = Math.floor(t);
+      },
+
+      twoChar: function (value) {
+        return ("0" + value).slice(-2);
+      },
+      threeChar: function (value) {
+        return ("00" + value).slice(-3);
       }
     }
   });
