@@ -1,10 +1,10 @@
 .main {
     height: 95vh;
     background-image:
-    linear-gradient(to bottom right,
-      rgba($color-primary-light, .9),
-      rgba($color-primary-dark, .9)),
-    url('../images/raptor.jpg');
+      linear-gradient(to bottom right,
+        rgba($color-primary-light, .9),
+        rgba($color-primary-dark, .9)),
+      url('../images/raptor.jpg');
     background-position: center;
     background-size: cover;
     border-radius: 3px;
