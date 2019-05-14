@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <title>Endurance</title>
 
@@ -13,29 +13,33 @@
 </head>
 
 <body>
-  <article class="main" id="app">
+  <div class="background" id="app">
+    <header>
+      <h1 class="title">Endurance</h1>
+    </header>
 
-    <div class="content-box">
+    <main>
+        <section class="result">
+          <p class="result__value">{{ hhh }} : {{ mm }} : {{ ss }}</p>
+          <p class="result__label">
+            <span class="result__label--h">h</span>
+            <span class="result__label--m">m</span>
+            <span class="result__label--s">s</span>
+          </p>
+        </section>
 
-      <div class="content-box--text">
-        <h1 class="title">Endurance</h1>
-        <p class="result">{{ hhh }} : {{ mm }} : {{ ss }}</p>
-      </div>
-
-      <div class="content-box--data-input">
-        <div class="input-box">
-          <label for="carburante">Carburante: <span class="input-value">{{ CC }}</span> galloni</label>
-          <input type="range" min="0" max="1999" v-bind:value="CC" v-on:input="changeCC" name="carburante" id="carburante">
-        </div>
-        <div class="input-box">
-          <label for="consumoh">Consumo Orario: <span class="input-value">{{ CH }}</span> galloni/h</label>
-          <input type="range" min="5" max="300" v-bind:value="CH" v-on:input="changeCH" name="consumoh" id="consumoh">
-        </div>
-      </div>
-
-    </div>
-
-  </article>
+        <section class="input">
+          <div class="input__box">
+            <label for="carburante">Carburante: <span class="input-value">{{ CC }}</span> galloni</label>
+            <input type="range" min="0" max="1999" v-bind:value="CC" v-on:input="changeCC" name="carburante" id="carburante">
+          </div>
+          <div class="input__box">
+            <label for="consumoh">Consumo Orario: <span class="input-value">{{ CH }}</span> galloni/h</label>
+            <input type="range" min="5" max="300" v-bind:value="CH" v-on:input="changeCH" name="consumoh" id="consumoh">
+          </div>
+        </section>
+    </main>
+  </div> <!-- /background -->
 
   <script>
   var cc = new Vue({

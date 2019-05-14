@@ -1,0 +1,14 @@
+header {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .title {
+    font-size: 4rem;
+    letter-spacing: 4rem;
+    animation: moviInLeft .8s;
+    color: $color-primary-light;
+    padding-left: 4rem
+  }
+}

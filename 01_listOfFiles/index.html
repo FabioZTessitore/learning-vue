@@ -1,0 +1,98 @@
+<!doctype html>
+<html class="no-js" lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>List of Files</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="u-text-center">List of Files</h1>
+  </header>
+
+
+  <article class="main" id="app">
+
+    <div class="input-box">
+      <div class="radio-box">
+        <div class="input-control">
+          <label for="file-text">Normal Text File</label>
+          <input type="radio" name="file-type" id="file-text">
+        </div>
+        <div class="input-control">
+          <label for="file-image">Image File</label>
+          <input type="radio" name="file-type" id="file-image">
+        </div>
+        <div class="input-control">
+          <label for="file-pdf">Pdf File</label>
+          <input type="radio" name="file-type" id="file-pdf">
+        </div>
+        <div class="input-control">
+          <label for="file-code">Code File</label>
+          <input type="radio" name="file-type" id="file-code">
+        </div>
+      </div>
+
+      <div class="filename">
+        <div class="input-control">
+          <label for="filename">Filename</label>
+          <input type="text" name="filename" id="filename" placeholder="filename">
+        </div>
+      </div>
+
+      <div class="submit">
+        <div class="input-control">
+          <button class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-of-files">
+      <ul class="files">
+        <li class="file" v-for="file in files">
+          <i class="far" v-bind:class="fileType(file.fileType)"></i>
+          <span class="file-name">{{ file.filename }}</span>
+        </li>
+      </ul>
+    </div>
+
+  </article>
+
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      nextFileId: 4,
+      files: [
+        { id: 0, fileType: 'code', filename: 'Filename (Code File)' },
+        { id: 1, fileType: 'image', filename: 'Filename (Image File)' },
+        { id: 2, fileType: 'pdf', filename: 'Filename (Pdf File)' },
+        { id: 3, fileType: 'normal', filename: 'Filename (Normal File)' }
+      ]
+    },
+    methods: {
+      fileType: function (type) {
+        var result = 'fa-file';
+        switch (type) {
+          case 'code':
+          case 'image':
+          case 'pdf':
+            result += '-'+type;
+        }
+        return result;
+      }
+    }
+  })
+  </script>
+</body>
+
+</html>

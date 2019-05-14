@@ -32,43 +32,61 @@ body {
   box-sizing: border-box;
   color: #eef;
   font-family: 'Lato', sans-serif;
-  position: relative;
   padding: 1rem; }
 
-.main {
+header {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  header .title {
+    font-size: 4rem;
+    letter-spacing: 4rem;
+    animation: moviInLeft .8s;
+    color: #8af;
+    padding-left: 4rem; }
+
+.background {
   height: 95vh;
   background-image: linear-gradient(to bottom right, rgba(136, 170, 255, 0.9), rgba(17, 17, 68, 0.9)), url("../images/raptor.jpg");
   background-position: center;
   background-size: cover;
   border-radius: 3px;
-  box-shadow: 0 .5rem .5rem black; }
-  .main .content-box {
+  box-shadow: 0 .5rem .5rem black;
+  position: relative; }
+  .background .result {
     position: absolute;
-    top: 50%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem; }
+    .background .result__value {
+      animation: moviInRight .8s;
+      letter-spacing: 1.3rem; }
+    .background .result__label {
+      animation: moviInRight .8s;
+      font-size: 4rem;
+      color: #8af; }
+      .background .result__label--h {
+        padding-left: 6rem; }
+      .background .result__label--m {
+        padding-left: 16rem; }
+      .background .result__label--s {
+        padding-left: 14rem; }
+  .background .input {
+    position: absolute;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%); }
-    .main .content-box--text {
-      margin-left: 3.2rem; }
-      .main .content-box--text .title {
-        font-size: 4rem;
-        letter-spacing: 3.45rem;
-        margin-bottom: 5rem;
-        animation: moviInLeft .8s;
-        color: #8af; }
-      .main .content-box--text .result {
-        font-size: 8.9rem;
-        margin-bottom: 5rem;
-        animation: moviInRight .8s; }
-    .main .content-box--data-input label {
-      font-size: 2.5rem;
-      color: #114; }
-    .main .content-box--data-input input[type="range"] {
+    .background .input__box {
+      font-size: 2.5rem; }
+      .background .input__box:not(:last-child) {
+        margin-bottom: 4rem; }
+      .background .input__box .input-value {
+        font-weight: 700;
+        color: #8af;
+        display: inline-block;
+        min-width: 10rem;
+        text-align: center; }
+    .background .input input[type="range"] {
       width: 100%; }
-    .main .content-box--data-input .input-box:not(:last-child) {
-      margin-bottom: 4rem; }
-    .main .content-box--data-input .input-value {
-      font-weight: 700;
-      color: #8af;
-      display: inline-block;
-      min-width: 10rem;
-      text-align: center; }

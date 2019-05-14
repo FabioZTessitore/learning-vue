@@ -1,0 +1,82 @@
+.main {
+  background-color: $color-primary-light;
+  border-radius: 2px;
+  width: 70vw;
+  margin: 0 auto;
+  padding: 2rem;
+  box-shadow: 0 .5rem .5rem black;
+  position: relative;
+
+  .input-box {
+    width: 90%;
+    background-color: $color-primary-dark;
+    margin: 0 auto 3rem auto;
+    border-radius: 3px;
+    font-size: 2rem;
+    color: $color-primary-light;
+
+    .input-control {
+      display: block;
+      margin: 2rem;
+
+      input[type="radio"] {
+        float: left;
+        margin-right: 2rem;
+      }
+    }
+
+    .radio-box {
+      width: 30%;
+      float: left;
+    }
+
+    .filename {
+      width: 50%;
+      float: right;
+      background-color: yellow;
+    }
+
+    .submit {
+      clear: both;
+      background-color: green;
+      display: block;
+      padding: 2rem;
+    }
+  }
+
+  .list-of-files {
+    width: 30vw;
+    margin: 0 auto;
+
+    .files {
+      list-style-type: none;
+
+      :not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      .file {
+        border: 1px solid black;
+        border-radius: 3px;
+        box-shadow: 0 .3rem .3rem black;
+        padding: 2rem 2rem;
+        transition: all .5s;
+
+        &:hover {
+          transform: scale(1.03);
+          box-shadow: 0 .5rem .5rem #333;
+        }
+
+        .file-name {
+          position: relative;
+          bottom: .3rem;
+        }
+
+        i {
+          margin: 0 3rem;
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}

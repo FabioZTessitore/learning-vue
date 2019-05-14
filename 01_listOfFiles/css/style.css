@@ -1,0 +1,116 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  padding: 3rem; }
+
+body {
+  font-family: 'Lato', sans-serif; }
+
+header h1 {
+  font-size: 8rem;
+  letter-spacing: 2rem; }
+
+.main {
+  font-size: 2rem; }
+  .main .files .file {
+    color: #812; }
+    .main .files .file .file-name {
+      font-weight: 400; }
+
+.u-text-center {
+  text-align: center !important; }
+
+.btn,
+.btn:link,
+.btn:visited {
+  border: none;
+  padding: 1rem 3rem;
+  margin: .5rem;
+  border-radius: 10rem;
+  background-color: white;
+  color: #333;
+  transition: all .4s;
+  font-size: 2rem; }
+  .btn:hover,
+  .btn:link:hover,
+  .btn:visited:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 1rem .5rem #333; }
+  .btn:active,
+  .btn:link:active,
+  .btn:visited:active {
+    transform: scale(1) translateY(0);
+    box-shadow: 0 .5rem .4rem black; }
+
+header {
+  padding: 0 3rem 3rem; }
+  header h1 {
+    background-image: linear-gradient(to right, #b45, #812);
+    color: transparent;
+    background-clip: text;
+    padding-left: 2rem; }
+
+.main {
+  background-color: #f7eeee;
+  border-radius: 2px;
+  width: 70vw;
+  margin: 0 auto;
+  padding: 2rem;
+  box-shadow: 0 .5rem .5rem black;
+  position: relative; }
+  .main .input-box {
+    width: 90%;
+    background-color: #812;
+    margin: 0 auto 3rem auto;
+    border-radius: 3px;
+    font-size: 2rem;
+    color: #f7eeee; }
+    .main .input-box .input-control {
+      display: block;
+      margin: 2rem; }
+      .main .input-box .input-control input[type="radio"] {
+        float: left;
+        margin-right: 2rem; }
+    .main .input-box .radio-box {
+      width: 30%;
+      float: left; }
+    .main .input-box .filename {
+      width: 50%;
+      float: right;
+      background-color: yellow; }
+    .main .input-box .submit {
+      clear: both;
+      background-color: green;
+      display: block;
+      padding: 2rem; }
+  .main .list-of-files {
+    width: 30vw;
+    margin: 0 auto; }
+    .main .list-of-files .files {
+      list-style-type: none; }
+      .main .list-of-files .files :not(:last-child) {
+        margin-bottom: 2rem; }
+      .main .list-of-files .files .file {
+        border: 1px solid black;
+        border-radius: 3px;
+        box-shadow: 0 .3rem .3rem black;
+        padding: 2rem 2rem;
+        transition: all .5s; }
+        .main .list-of-files .files .file:hover {
+          transform: scale(1.03);
+          box-shadow: 0 .5rem .5rem #333; }
+        .main .list-of-files .files .file .file-name {
+          position: relative;
+          bottom: .3rem; }
+        .main .list-of-files .files .file i {
+          margin: 0 3rem;
+          font-size: 3rem; }
