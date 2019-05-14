@@ -15,13 +15,34 @@
 
 <body>
 
-  <header>
-    <h1 class="u-text-center">List of Files</h1>
+  <header class="header">
+    <div class="text-box">
+      <h1 class="header__primary">List of Files</h1>
+      <p class="header__secondary">Simulating an Old and Ugly File Manager</p>
+    </div>
   </header>
 
+  <main class="main" id="app">
 
-  <article class="main" id="app">
+    <section class="section-input">
+      <div class="filetype">
 
+      </div>
+      <div class="right-box">
+
+      </div>
+    </section>
+
+    <section class="section-files">
+      <ul class="files">
+        <li class="file" v-for="file in files">
+          <i class="far" v-bind:class="fileType(file.fileType)"></i>
+          <span class="file-name">{{ file.filename }}</span>
+        </li>
+      </ul>
+    </section>
+
+<!--
     <div class="input-box">
       <div class="radio-box">
         <div class="input-control">
@@ -64,19 +85,23 @@
         </li>
       </ul>
     </div>
-
-  </article>
+-->
+  </main>
 
   <script>
   var app = new Vue({
     el: '#app',
     data: {
-      nextFileId: 4,
+      nextFileId: 8,
       files: [
         { id: 0, fileType: 'code', filename: 'Filename (Code File)' },
         { id: 1, fileType: 'image', filename: 'Filename (Image File)' },
         { id: 2, fileType: 'pdf', filename: 'Filename (Pdf File)' },
-        { id: 3, fileType: 'normal', filename: 'Filename (Normal File)' }
+        { id: 3, fileType: 'normal', filename: 'Filename (Normal File)' },
+        { id: 4, fileType: 'normal', filename: 'Filename (Normal File)' },
+        { id: 5, fileType: 'normal', filename: 'Filename (Normal File)' },
+        { id: 6, fileType: 'normal', filename: 'Filename (Normal File)' },
+        { id: 7, fileType: 'normal', filename: 'Filename (Normal File)' }
       ]
     },
     methods: {

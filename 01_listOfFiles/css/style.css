@@ -10,14 +10,23 @@ html {
 
 body {
   box-sizing: border-box;
-  padding: 3rem; }
+  padding: 3rem;
+  position: relative; }
 
 body {
   font-family: 'Lato', sans-serif; }
 
-header h1 {
+.header__primary {
+  background-image: linear-gradient(to right, #b45, #812);
+  color: transparent;
+  background-clip: text;
   font-size: 8rem;
   letter-spacing: 2rem; }
+
+.header__secondary {
+  color: #812;
+  font-size: 3rem;
+  letter-spacing: .27rem; }
 
 .main {
   font-size: 2rem; }
@@ -26,9 +35,10 @@ header h1 {
     .main .files .file .file-name {
       font-weight: 400; }
 
-.u-text-center {
-  text-align: center !important; }
-
+/*
+.u-text-center { text-align: center !important; }
+*/
+/*
 .btn,
 .btn:link,
 .btn:visited {
@@ -39,78 +49,83 @@ header h1 {
   background-color: white;
   color: #333;
   transition: all .4s;
-  font-size: 2rem; }
-  .btn:hover,
-  .btn:link:hover,
-  .btn:visited:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 1rem .5rem #333; }
-  .btn:active,
-  .btn:link:active,
-  .btn:visited:active {
-    transform: scale(1) translateY(0);
-    box-shadow: 0 .5rem .4rem black; }
+  font-size: 2rem;
 
-header {
-  padding: 0 3rem 3rem; }
-  header h1 {
-    background-image: linear-gradient(to right, #b45, #812);
-    color: transparent;
-    background-clip: text;
-    padding-left: 2rem; }
+  &:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 1rem .5rem #333;
+  }
+
+  &:active {
+    transform: scale(1) translateY(0);
+    box-shadow: 0 .5rem .4rem black;
+  }
+}
+*/
+.header {
+  background-color: #f7d7a7;
+  height: 30vh;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.8); }
+  .header .text-box {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 1rem; }
 
 .main {
-  background-color: #f7eeee;
+  background-color: #f7d7a7;
+  margin-top: 6rem;
   border-radius: 2px;
-  width: 70vw;
-  margin: 0 auto;
   padding: 2rem;
-  box-shadow: 0 .5rem .5rem black;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.8);
   position: relative; }
-  .main .input-box {
-    width: 90%;
+  .main .section-input {
+    width: 95%;
+    height: 40vh;
     background-color: #812;
-    margin: 0 auto 3rem auto;
-    border-radius: 3px;
-    font-size: 2rem;
-    color: #f7eeee; }
-    .main .input-box .input-control {
-      display: block;
-      margin: 2rem; }
-      .main .input-box .input-control input[type="radio"] {
-        float: left;
-        margin-right: 2rem; }
-    .main .input-box .radio-box {
-      width: 30%;
-      float: left; }
-    .main .input-box .filename {
-      width: 50%;
-      float: right;
-      background-color: yellow; }
-    .main .input-box .submit {
-      clear: both;
+    border-radius: 2px;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    position: relative; }
+    .main .section-input .filetype {
+      background-color: red;
+      display: inline-block;
+      position: absolute;
+      top: 2rem;
+      bottom: 2rem;
+      left: 3rem;
+      right: calc(3rem + 50%); }
+    .main .section-input .right-box {
       background-color: green;
-      display: block;
-      padding: 2rem; }
-  .main .list-of-files {
-    width: 30vw;
-    margin: 0 auto; }
-    .main .list-of-files .files {
+      display: inline-block;
+      position: absolute;
+      top: 2rem;
+      bottom: 2rem;
+      right: 3rem;
+      left: calc(3rem + 50%); }
+  .main .section-files {
+    width: 95%;
+    margin: 0 auto;
+    column-count: 3; }
+    .main .section-files .files {
       list-style-type: none; }
-      .main .list-of-files .files :not(:last-child) {
+      .main .section-files .files :not(:last-child) {
         margin-bottom: 2rem; }
-      .main .list-of-files .files .file {
+      .main .section-files .files .file {
         border: 1px solid black;
         border-radius: 3px;
-        box-shadow: 0 .3rem .3rem black;
+        box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.8);
         padding: 2rem 2rem;
         transition: all .5s; }
-        .main .list-of-files .files .file:hover {
+        .main .section-files .files .file:hover {
           transform: scale(1.03);
           box-shadow: 0 .5rem .5rem #333; }
-        .main .list-of-files .files .file .file-name {
+        .main .section-files .files .file .file-name {
           position: relative;
           bottom: .3rem; }
-        .main .list-of-files .files .file i {
+        .main .section-files .files .file i {
           margin: 0 3rem;
           font-size: 3rem; }
