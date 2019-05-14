@@ -34,17 +34,39 @@ body {
   font-family: 'Lato', sans-serif;
   padding: 1rem; }
 
+header .title {
+  font-size: 4rem;
+  letter-spacing: 4rem;
+  color: #8af;
+  padding-left: 4rem; }
+
+.background .result__value {
+  letter-spacing: 1.3rem; }
+
+.background .result__label {
+  font-size: 4rem;
+  color: #8af; }
+  .background .result__label--h {
+    padding-left: 6rem; }
+  .background .result__label--m {
+    padding-left: 16rem; }
+  .background .result__label--s {
+    padding-left: 14rem; }
+
+.background .input__box {
+  font-size: 2.5rem; }
+  .background .input__box .input-value {
+    font-weight: 700;
+    color: #8af;
+    text-align: center; }
+
 header {
   position: absolute;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%); }
   header .title {
-    font-size: 4rem;
-    letter-spacing: 4rem;
-    animation: moviInLeft .8s;
-    color: #8af;
-    padding-left: 4rem; }
+    animation: moviInLeft .8s; }
 
 .background {
   height: 95vh;
@@ -61,32 +83,18 @@ header {
     transform: translate(-50%, -50%);
     font-size: 6rem; }
     .background .result__value {
-      animation: moviInRight .8s;
-      letter-spacing: 1.3rem; }
+      animation: moviInRight .8s; }
     .background .result__label {
-      animation: moviInRight .8s;
-      font-size: 4rem;
-      color: #8af; }
-      .background .result__label--h {
-        padding-left: 6rem; }
-      .background .result__label--m {
-        padding-left: 16rem; }
-      .background .result__label--s {
-        padding-left: 14rem; }
+      animation: moviInRight .8s; }
   .background .input {
     position: absolute;
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%); }
-    .background .input__box {
-      font-size: 2.5rem; }
-      .background .input__box:not(:last-child) {
-        margin-bottom: 4rem; }
-      .background .input__box .input-value {
-        font-weight: 700;
-        color: #8af;
-        display: inline-block;
-        min-width: 10rem;
-        text-align: center; }
+    .background .input__box:not(:last-child) {
+      margin-bottom: 4rem; }
+    .background .input__box .input-value {
+      display: inline-block;
+      min-width: 10rem; }
     .background .input input[type="range"] {
       width: 100%; }

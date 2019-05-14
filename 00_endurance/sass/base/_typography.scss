@@ -1,0 +1,45 @@
+header {
+  .title {
+    font-size: 4rem;
+    letter-spacing: 4rem;
+    color: $color-primary-light;
+    padding-left: 4rem
+  }
+}
+
+.background {
+  .result {
+    &__value {
+      letter-spacing: 1.3rem;
+    }
+
+    &__label {
+      font-size: 4rem;
+      color: $color-primary-light;
+
+      &--h {
+        padding-left: 6rem;
+      }
+
+      &--m {
+        padding-left: 16rem;
+      }
+
+      &--s {
+        padding-left: 14rem;
+      }
+    }
+  }
+
+  .input {
+    &__box {
+      font-size: 2.5rem;
+
+      .input-value {
+        font-weight: 700;
+        color: $color-primary-light;
+        text-align: center;
+      }
+    }
+  }
+}
