@@ -1,0 +1,77 @@
+<style>
+#lista {
+  /*
+  backface-visibility: hidden;
+  */
+}
+
+.start {
+  animation: moveInRight 4s;
+}
+
+.slideDown {
+  animation: moveInTop 2s;
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInTop {
+  0% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+</style>
+
+<input type="text" id="newElem">
+<button id="newElemBtn">Salva</button>
+
+<ul id="lista">
+</ul>
+
+
+  <script>
+    var listaElem = document.getElementById('lista');
+    var lista = ['asso', 'balena', 'cane', 'dama' ];
+    lista.forEach( function (elemento) {
+      var elementoElem = document.createElement('li');
+      var node = document.createTextNode(elemento);
+      elementoElem.appendChild(node);
+      listaElem.appendChild(elementoElem);
+    });
+
+    var btn = document.getElementById('newElemBtn');
+    btn.addEventListener('click', function () {
+      var newElemElem = document.getElementById('newElem');
+
+      var elementoElem = document.createElement('li');
+      elementoElem.setAttribute('class', 'start');
+      var node = document.createTextNode(newElemElem.value);
+      elementoElem.appendChild(node);
+      listaElem.insertBefore(elementoElem, listaElem.firstChild);
+      listaElem.classList.add('slideDown');
+      setTimeout(function () {
+        listaElem.classList.remove('slideDown');
+      }, 1500);
+    }, false);
+  </script>
