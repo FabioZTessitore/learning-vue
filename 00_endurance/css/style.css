@@ -27,6 +27,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 50.625em) {
+    html {
+      font-size: 45%; } }
+  @media (max-width: 37.125em) {
+    html {
+      font-size: 37%; } }
+  @media (max-width: 25em) {
+    html {
+      font-size: 30%; } }
 
 body {
   box-sizing: border-box;
@@ -40,18 +49,33 @@ header .title {
   color: #8af;
   padding-left: 4rem; }
 
-.background .result__value {
-  letter-spacing: 1.3rem; }
-
-.background .result__label {
-  font-size: 4rem;
-  color: #8af; }
-  .background .result__label--h {
-    padding-left: 6rem; }
-  .background .result__label--m {
-    padding-left: 16rem; }
-  .background .result__label--s {
-    padding-left: 14rem; }
+.background .result {
+  font-size: 4rem; }
+  @media (max-width: 50.625em) {
+    .background .result {
+      font-size: 4.4rem; } }
+  .background .result__value {
+    letter-spacing: 1.3rem; }
+    @media (max-width: 37.125em) {
+      .background .result__value {
+        letter-spacing: 1.3rem;
+        padding-left: .65rem;
+        text-align: center; } }
+  .background .result__label {
+    font-size: 4rem;
+    color: #8af; }
+    @media (max-width: 37.125em) {
+      .background .result__label {
+        text-align: center; } }
+    .background .result__label--h {
+      padding-left: 4.1rem; }
+      @media (max-width: 37.125em) {
+        .background .result__label--h {
+          padding-left: .65rem; } }
+    .background .result__label--m {
+      padding-left: 12rem; }
+    .background .result__label--s {
+      padding-left: 10rem; }
 
 .background .input__box {
   font-size: 2.5rem; }
@@ -80,8 +104,13 @@ header {
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 6rem; }
+    transform: translate(-50%, -50%); }
+    @media (max-width: 37.125em) {
+      .background .result {
+        width: 75%; } }
+    @media (max-width: 25em) {
+      .background .result {
+        width: 85%; } }
     .background .result__value {
       animation: moviInRight .8s; }
     .background .result__label {
@@ -91,6 +120,12 @@ header {
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%); }
+    @media (max-width: 37.125em) {
+      .background .input {
+        width: 75%; } }
+    @media (max-width: 25em) {
+      .background .input {
+        width: 85%; } }
     .background .input__box:not(:last-child) {
       margin-bottom: 4rem; }
     .background .input__box .input-value {

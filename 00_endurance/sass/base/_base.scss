@@ -6,6 +6,18 @@
 
 html {
   font-size: 62.5%;
+
+  @include respond($tab-por) {
+    font-size: 45%;
+  }
+
+  @include respond($big-phone) {
+    font-size: 37%;
+  }
+  
+  @include respond($phone) {
+    font-size: 30%;
+  }
 }
 
 body {

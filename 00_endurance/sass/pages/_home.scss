@@ -16,8 +16,15 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 6rem;
 
+    @include respond($big-phone) {
+      width: 75%;
+    }
+
+    @include respond($phone) {
+      width: 85%;
+    }
+    
     &__value {
       animation: moviInRight .8s;
     }
@@ -33,8 +40,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    &__box {
+    @include respond($big-phone) {
+      width: 75%;
+    }
 
+    @include respond($phone) {
+      width: 85%;
+    }
+
+    &__box {
       &:not(:last-child) {
         margin-bottom: 4rem;
       }
