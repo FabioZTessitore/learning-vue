@@ -1,48 +1,27 @@
 .main {
-  background-color: $color-primary-light;
-  margin-top: 6rem;
-  border-radius: 2px;
-  padding: 2rem;
-  box-shadow: 0 .5rem .5rem rgba(black, 0.8);
-  position: relative;
-
   .section-input {
-    width: 95%;
+    background-color: $color-primary-light;
     height: 40vh;
     background-color: $color-primary-dark;
     border-radius: 2px;
     margin: 0 auto;
-    margin-bottom: 4rem;
     position: relative;
-
-    .filetype {
-      background-color: red;
-      display: inline-block;
-      position: absolute;
-      top: 2rem;
-      bottom: 2rem;
-      left: 3rem;
-      right: calc(3rem + 50%);
-    }
-
-    .right-box {
-      background-color: green;
-      display: inline-block;
-      position: absolute;
-      top: 2rem;
-      bottom: 2rem;
-      right: 3rem;
-      left: calc(3rem + 50%);
-    }
+    box-shadow: 0 .5rem .5rem rgba(black, 0.8);
+    margin-top: 3rem;
   }
-
+  
   .section-files {
-    width: 95%;
+    background-color: $color-primary-light;
     margin: 0 auto;
-    column-count: 3;
+    border-radius: 2px;
+    box-shadow: 0 .5rem .5rem rgba(black, 0.8);
+    margin-top: 3rem;
 
     .files {
+      width: 30%;
       list-style-type: none;
+      margin: 0 auto;
+      padding: 3rem;
 
       :not(:last-child) {
         margin-bottom: 2rem;
@@ -73,3 +52,30 @@
     }
   }
 }
+
+/*
+.main {
+  .section-input {
+    
+    .filetype {
+      background-color: red;
+      display: inline-block;
+      position: absolute;
+      top: 2rem;
+      bottom: 2rem;
+      left: 3rem;
+      right: calc(3rem + 50%);
+    }
+
+    .right-box {
+      background-color: green;
+      display: inline-block;
+      position: absolute;
+      top: 2rem;
+      bottom: 2rem;
+      right: 3rem;
+      left: calc(3rem + 50%);
+    }
+  }
+}
+*/

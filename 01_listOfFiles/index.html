@@ -23,12 +23,12 @@
   </header>
 
   <main class="main" id="app">
-
+    
     <section class="section-input">
-      <div class="filetype">
+      <div class="filetype-box">
 
       </div>
-      <div class="right-box">
+      <div class="filename-box">
 
       </div>
     </section>
@@ -42,7 +42,7 @@
       </ul>
     </section>
 
-<!--
+    <!--
     <div class="input-box">
       <div class="radio-box">
         <div class="input-control">
@@ -85,7 +85,7 @@
         </li>
       </ul>
     </div>
--->
+  -->
   </main>
 
   <script>
@@ -107,12 +107,17 @@
     methods: {
       fileType: function (type) {
         var result = 'fa-file';
+        if (type === 'code' || type === 'image' || type === 'pdf') {
+          result += '-'+type;
+        }
+        /*
         switch (type) {
           case 'code':
           case 'image':
           case 'pdf':
             result += '-'+type;
         }
+        */
         return result;
       }
     }

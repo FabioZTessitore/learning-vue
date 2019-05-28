@@ -21,13 +21,14 @@ body {
 .main {
   font-size: 2rem;
 
-  .files {
-
-    .file {
-      color: $color-primary-dark;
-
-      .file-name {
-        font-weight: 400;
+  .section-files {
+    .files {
+      .file {
+        color: $color-primary-dark;
+  
+        .file-name {
+          font-weight: 400;
+        }
       }
     }
   }

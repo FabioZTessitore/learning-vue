@@ -10,8 +10,7 @@ html {
 
 body {
   box-sizing: border-box;
-  padding: 3rem;
-  position: relative; }
+  padding: 3rem; }
 
 body {
   font-family: 'Lato', sans-serif; }
@@ -30,102 +29,95 @@ body {
 
 .main {
   font-size: 2rem; }
-  .main .files .file {
+  .main .section-files .files .file {
     color: #812; }
-    .main .files .file .file-name {
+    .main .section-files .files .file .file-name {
       font-weight: 400; }
 
-/*
-.u-text-center { text-align: center !important; }
-*/
-/*
-.btn,
-.btn:link,
-.btn:visited {
-  border: none;
-  padding: 1rem 3rem;
-  margin: .5rem;
-  border-radius: 10rem;
-  background-color: white;
-  color: #333;
-  transition: all .4s;
-  font-size: 2rem;
-
-  &:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 1rem .5rem #333;
-  }
-
-  &:active {
-    transform: scale(1) translateY(0);
-    box-shadow: 0 .5rem .4rem black;
-  }
-}
-*/
 .header {
   background-color: #f7d7a7;
-  height: 30vh;
   border-radius: 2px;
-  position: relative;
-  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.8); }
+  height: 30vh;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.8);
+  position: relative; }
   .header .text-box {
     position: absolute;
     top: 20%;
     left: 50%;
-    transform: translateX(-50%);
-    padding-left: 1rem; }
+    transform: translateX(-50%); }
 
-.main {
+.main .section-input {
   background-color: #f7d7a7;
-  margin-top: 6rem;
+  height: 40vh;
+  background-color: #812;
   border-radius: 2px;
-  padding: 2rem;
+  margin: 0 auto;
+  position: relative;
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.8);
-  position: relative; }
-  .main .section-input {
-    width: 95%;
-    height: 40vh;
-    background-color: #812;
-    border-radius: 2px;
+  margin-top: 3rem; }
+
+.main .section-files {
+  background-color: #f7d7a7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.8);
+  margin-top: 3rem; }
+  .main .section-files .files {
+    width: 30%;
+    list-style-type: none;
     margin: 0 auto;
-    margin-bottom: 4rem;
-    position: relative; }
-    .main .section-input .filetype {
+    padding: 3rem; }
+    .main .section-files .files :not(:last-child) {
+      margin-bottom: 2rem; }
+    .main .section-files .files .file {
+      border: 1px solid black;
+      border-radius: 3px;
+      box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.8);
+      padding: 2rem 2rem;
+      transition: all .5s; }
+      .main .section-files .files .file:hover {
+        transform: scale(1.03);
+        box-shadow: 0 .5rem .5rem #333; }
+      .main .section-files .files .file .file-name {
+        position: relative;
+        bottom: .3rem; }
+      .main .section-files .files .file i {
+        margin: 0 3rem;
+        font-size: 3rem; }
+
+/*
+.main {
+  .section-input {
+    
+    .filetype {
       background-color: red;
       display: inline-block;
       position: absolute;
       top: 2rem;
       bottom: 2rem;
       left: 3rem;
-      right: calc(3rem + 50%); }
-    .main .section-input .right-box {
+      right: calc(3rem + 50%);
+    }
+
+    .right-box {
       background-color: green;
       display: inline-block;
       position: absolute;
       top: 2rem;
       bottom: 2rem;
       right: 3rem;
-      left: calc(3rem + 50%); }
-  .main .section-files {
-    width: 95%;
-    margin: 0 auto;
-    column-count: 3; }
-    .main .section-files .files {
-      list-style-type: none; }
-      .main .section-files .files :not(:last-child) {
-        margin-bottom: 2rem; }
-      .main .section-files .files .file {
-        border: 1px solid black;
-        border-radius: 3px;
-        box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.8);
-        padding: 2rem 2rem;
-        transition: all .5s; }
-        .main .section-files .files .file:hover {
-          transform: scale(1.03);
-          box-shadow: 0 .5rem .5rem #333; }
-        .main .section-files .files .file .file-name {
-          position: relative;
-          bottom: .3rem; }
-        .main .section-files .files .file i {
-          margin: 0 3rem;
-          font-size: 3rem; }
+      left: calc(3rem + 50%);
+    }
+  }
+}
+*/
+/*
+
+@import 'abstracts/mixins';
+
+@import 'base/utilities';
+
+@import 'components/button';
+
+
+*/
