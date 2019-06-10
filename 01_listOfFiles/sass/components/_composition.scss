@@ -1,0 +1,44 @@
+.composition {
+    position: relative;
+
+    &__icon {
+        font-size: 18rem;
+        position: relative;
+        transition: all .4s;
+        z-index: 0;
+        padding: 1.5rem 3rem;
+        border-radius: 4px;
+        box-shadow: 0 1rem 2rem black;
+        color: $color-primary-dark;
+
+        &:hover {
+            font-size: 22rem;
+            z-index: 1;
+        }
+
+        &--1 {
+            position: absolute;
+            top: 0;
+            left: 3rem;
+            background: linear-gradient(to bottom right, lightgreen, green);
+        }
+
+        &--2 {
+            position: absolute;
+            top: 9rem;
+            left: 12rem;
+            background: linear-gradient(to bottom right, lightblue, blue);
+        }
+
+        &--3 {
+            position: absolute;
+            top: 4rem;
+            left: 22rem;
+            background: linear-gradient(to bottom right, lightyellow, yellow);
+        }
+    }
+
+    &:hover &__icon:not(:hover) {
+        font-size: 16rem;
+    }
+}

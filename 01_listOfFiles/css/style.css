@@ -34,6 +34,38 @@ body {
     .main .section-files .files .file .file-name {
       font-weight: 400; }
 
+.composition {
+  position: relative; }
+  .composition__icon {
+    font-size: 18rem;
+    position: relative;
+    transition: all .4s;
+    z-index: 0;
+    padding: 1.5rem 3rem;
+    border-radius: 4px;
+    box-shadow: 0 1rem 2rem black;
+    color: #812; }
+    .composition__icon:hover {
+      font-size: 22rem;
+      z-index: 1; }
+    .composition__icon--1 {
+      position: absolute;
+      top: 0;
+      left: 3rem;
+      background: linear-gradient(to bottom right, lightgreen, green); }
+    .composition__icon--2 {
+      position: absolute;
+      top: 9rem;
+      left: 12rem;
+      background: linear-gradient(to bottom right, lightblue, blue); }
+    .composition__icon--3 {
+      position: absolute;
+      top: 4rem;
+      left: 22rem;
+      background: linear-gradient(to bottom right, lightyellow, yellow); }
+  .composition:hover .composition__icon:not(:hover) {
+    font-size: 16rem; }
+
 .header {
   background-color: #f7d7a7;
   border-radius: 2px;
@@ -55,6 +87,39 @@ body {
   position: relative;
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.8);
   margin-top: 3rem; }
+  .main .section-input .filetype-box {
+    height: 90%;
+    width: 40vw;
+    float: left;
+    margin-top: 1%;
+    margin-left: 5%;
+    padding-left: 10rem; }
+  .main .section-input .filename-box {
+    height: 90%;
+    width: 40vw;
+    float: right;
+    margin-top: 1%;
+    margin-right: 5%;
+    position: relative; }
+    .main .section-input .filename-box .input-control {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .main .section-input .filename-box .input-control label {
+        color: #f7d7a7;
+        font-size: 1.5rem;
+        position: relative;
+        bottom: 2rem;
+        font-weight: 200; }
+      .main .section-input .filename-box .input-control input {
+        font-size: 3rem; }
+      .main .section-input .filename-box .input-control p {
+        margin-top: 2.5rem;
+        color: #f7d7a7;
+        font-weight: 200; }
+        .main .section-input .filename-box .input-control p .filetype {
+          font-weight: 700; }
 
 .main .section-files {
   background-color: #f7d7a7;
@@ -74,43 +139,30 @@ body {
       border-radius: 3px;
       box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.8);
       padding: 2rem 2rem;
-      transition: all .5s; }
+      transition: all .5s;
+      position: relative; }
       .main .section-files .files .file:hover {
         transform: scale(1.03);
         box-shadow: 0 .5rem .5rem #333; }
-      .main .section-files .files .file .file-name {
+      .main .section-files .files .file__name {
         position: relative;
         bottom: .3rem; }
-      .main .section-files .files .file i {
+      .main .section-files .files .file__icon {
         margin: 0 3rem;
         font-size: 3rem; }
+      .main .section-files .files .file__delete {
+        position: absolute;
+        right: 2rem;
+        padding: 0.2rem 1rem;
+        background-color: #812;
+        color: #f7d7a7;
+        border-radius: 2px;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
+        border-left: 1px solid grey;
+        border-top: 1px solid grey;
+        cursor: pointer; }
 
-/*
-.main {
-  .section-input {
-    
-    .filetype {
-      background-color: red;
-      display: inline-block;
-      position: absolute;
-      top: 2rem;
-      bottom: 2rem;
-      left: 3rem;
-      right: calc(3rem + 50%);
-    }
-
-    .right-box {
-      background-color: green;
-      display: inline-block;
-      position: absolute;
-      top: 2rem;
-      bottom: 2rem;
-      right: 3rem;
-      left: calc(3rem + 50%);
-    }
-  }
-}
-*/
 /*
 
 @import 'abstracts/mixins';
@@ -118,6 +170,5 @@ body {
 @import 'base/utilities';
 
 @import 'components/button';
-
 
 */

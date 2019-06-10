@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:200,400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <title>List of Files</title>
@@ -26,66 +26,31 @@
     
     <section class="section-input">
       <div class="filetype-box">
-
+        <div class="composition">
+          <div @click="filetypeSelected='code'" class="composition__icon composition__icon--1"><i class="far fa-file-code"></i></div>
+          <div @click="filetypeSelected='image'" class="composition__icon composition__icon--2"><i class="far fa-file-image"></i></div>
+          <div @click="filetypeSelected='pdf'" class="composition__icon composition__icon--3"><i class="far fa-file-pdf"></i></div>
+        </div>
       </div>
-      <div class="filename-box">
 
+      <div class="filename-box">
+        <div class="input-control">
+          <label for="filename">Filename</label>
+          <input @keyup.enter="createFile" type="text" name="filename" id="filename" placeholder="Filename">
+          <p class="filetype-selected">File Type Selected: <span class="filetype">{{ filetypeSelected }}</span></p>
+        </div>
       </div>
     </section>
 
     <section class="section-files">
       <ul class="files">
         <li class="file" v-for="file in files">
-          <i class="far" v-bind:class="fileType(file.fileType)"></i>
-          <span class="file-name">{{ file.filename }}</span>
+          <i class="file__icon far" v-bind:class="fileType(file.fileType)"></i>
+          <span class="file__name">({{ file.id }}) {{ file.filename }}</span>
+          <span @click="deleteFile(file.id)" class="file__delete">&times;</span>
         </li>
       </ul>
     </section>
-
-    <!--
-    <div class="input-box">
-      <div class="radio-box">
-        <div class="input-control">
-          <label for="file-text">Normal Text File</label>
-          <input type="radio" name="file-type" id="file-text">
-        </div>
-        <div class="input-control">
-          <label for="file-image">Image File</label>
-          <input type="radio" name="file-type" id="file-image">
-        </div>
-        <div class="input-control">
-          <label for="file-pdf">Pdf File</label>
-          <input type="radio" name="file-type" id="file-pdf">
-        </div>
-        <div class="input-control">
-          <label for="file-code">Code File</label>
-          <input type="radio" name="file-type" id="file-code">
-        </div>
-      </div>
-
-      <div class="filename">
-        <div class="input-control">
-          <label for="filename">Filename</label>
-          <input type="text" name="filename" id="filename" placeholder="filename">
-        </div>
-      </div>
-
-      <div class="submit">
-        <div class="input-control">
-          <button class="btn btn-primary">Save</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="list-of-files">
-      <ul class="files">
-        <li class="file" v-for="file in files">
-          <i class="far" v-bind:class="fileType(file.fileType)"></i>
-          <span class="file-name">{{ file.filename }}</span>
-        </li>
-      </ul>
-    </div>
-  -->
   </main>
 
   <script>
@@ -102,7 +67,8 @@
         { id: 5, fileType: 'normal', filename: 'Filename (Normal File)' },
         { id: 6, fileType: 'normal', filename: 'Filename (Normal File)' },
         { id: 7, fileType: 'normal', filename: 'Filename (Normal File)' }
-      ]
+      ],
+      filetypeSelected: 'not selected',
     },
     methods: {
       fileType: function (type) {
@@ -110,15 +76,22 @@
         if (type === 'code' || type === 'image' || type === 'pdf') {
           result += '-'+type;
         }
-        /*
-        switch (type) {
-          case 'code':
-          case 'image':
-          case 'pdf':
-            result += '-'+type;
-        }
-        */
         return result;
+      },
+      createFile: function (event) {
+        const newFile = {
+          id: this.nextFileId,
+          fileType: this.filetypeSelected,
+          filename: event.target.value
+        };
+        this.nextFileId++;
+        event.target.value = '';
+        this.files.push(newFile);
+      },
+      deleteFile: function (key) {
+        this.files = this.files.filter( function (file) {
+          return file.id !== key;
+        });
       }
     }
   })

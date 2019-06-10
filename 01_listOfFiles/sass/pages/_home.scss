@@ -8,6 +8,53 @@
     position: relative;
     box-shadow: 0 .5rem .5rem rgba(black, 0.8);
     margin-top: 3rem;
+
+    .filetype-box {
+      height: 90%;
+      width: 40vw;
+      float: left;
+      margin-top: 1%;
+      margin-left: 5%;
+      padding-left: 10rem;
+    }
+
+    .filename-box {
+      height: 90%;
+      width: 40vw;
+      float: right;
+      margin-top: 1%;
+      margin-right: 5%;
+      position: relative;
+
+      .input-control {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        label {
+          color: $color-primary-light;
+          font-size: 1.5rem;
+          position: relative;
+          bottom: 2rem;
+          font-weight: 200;
+        }
+
+        input {
+          font-size: 3rem;
+        }
+
+        p {
+          margin-top: 2.5rem;
+          color: $color-primary-light;
+          font-weight: 200;
+
+          .filetype {
+            font-weight: 700;
+          }
+        }
+      }
+    }
   }
   
   .section-files {
@@ -33,49 +80,37 @@
         box-shadow: 0 .3rem .3rem rgba(black, .8);
         padding: 2rem 2rem;
         transition: all .5s;
+        position: relative;
 
         &:hover {
           transform: scale(1.03);
           box-shadow: 0 .5rem .5rem #333;
         }
 
-        .file-name {
+        &__name {
           position: relative;
           bottom: .3rem;
         }
 
-        i {
+        &__icon {
           margin: 0 3rem;
           font-size: 3rem;
+        }
+
+        &__delete {
+          position: absolute;
+          right: 2rem;
+          padding: 0.2rem 1rem;
+          background-color: $color-primary-dark;
+          color: $color-primary-light;
+          border-radius: 2px;
+          border-bottom: 1px solid black;
+          border-right: 1px solid black;
+          border-left: 1px solid grey;
+          border-top: 1px solid grey;
+          cursor: pointer;
         }
       }
     }
   }
 }
-
-/*
-.main {
-  .section-input {
-    
-    .filetype {
-      background-color: red;
-      display: inline-block;
-      position: absolute;
-      top: 2rem;
-      bottom: 2rem;
-      left: 3rem;
-      right: calc(3rem + 50%);
-    }
-
-    .right-box {
-      background-color: green;
-      display: inline-block;
-      position: absolute;
-      top: 2rem;
-      bottom: 2rem;
-      right: 3rem;
-      left: calc(3rem + 50%);
-    }
-  }
-}
-*/
