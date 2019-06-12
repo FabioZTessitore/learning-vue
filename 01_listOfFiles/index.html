@@ -44,7 +44,7 @@
 
     <section class="section-files">
       <ul class="files">
-        <li class="file" v-for="file in files">
+        <li class="file" v-for="file in files" :key="file.id">
           <i class="file__icon far" v-bind:class="fileType(file.fileType)"></i>
           <span class="file__name">({{ file.id }}) {{ file.filename }}</span>
           <span @click="deleteFile(file.id)" class="file__delete">&times;</span>
