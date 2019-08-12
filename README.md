@@ -6,3 +6,8 @@
 ```bash
 $ sudo npm install -g @vue/cli
 ```
+
+### Create a new project
+```bash
+$ vue create projectName
+```
