@@ -20,3 +20,8 @@ I recommend to create a custom features presets named `standard-custom` with `Ba
 ```bash
 $ npm run serve
 ```
+
+### Adding `SCSS`
+```bash
+$ npm install sass-loader node-sass
+```
