@@ -12,3 +12,11 @@ $ vue --version
 ```bash
 $ vue create projectName
 ```
+
+#### Custom features
+I recommend to create a custom features presets named `standard-custom` with `Babel`, `Router`, `Vuex` and `Linter`. `SCSS` will be added later.
+
+### Start the application
+```bash
+$ npm run serve
+```
