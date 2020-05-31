@@ -1,13 +1,11 @@
-$phone: 25em;
-$big-phone: 37.125em;
-$tab-por: 50.625em;
-$tab-land: 75em;
-$big-desktop: 112.5em;
+$phone: 23.75em;                //  23.75  * 16px =  380px
+$big-phone: 37.125em;           //  37.125 * 16px =  594px
+$tab-por: 50.625em;             //  50.625 * 16px =  810px
+$tab-land: 75em;                //  75     * 16px = 1200px
+$big-desktop: 112.5em;          // 112.5   * 16px = 1800px
 
 @mixin respond($breakpoint) {
-
     @media (max-width: $breakpoint) {
         @content;
     }
-
 }

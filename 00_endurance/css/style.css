@@ -1,23 +1,31 @@
-@keyframes moviInLeft {
+@keyframes moveInLeft {
   0% {
-    transform: translateX(-100px) skewX(0);
+    transform: translateX(-10rem) skewX(0);
     opacity: 0; }
   80% {
-    transform: translateX(20px) skewX(-25deg);
+    transform: translateX(2rem) skewX(-25deg);
     opacity: 1; }
   100% {
     transform: translateX(0) skewX(0);
     opacity: 1; } }
 
-@keyframes moviInRight {
+@keyframes moveInRight {
   0% {
-    transform: translateX(100px) skewX(0);
+    transform: translateX(10rem) skewX(0);
     opacity: 0; }
   80% {
-    transform: translateX(-20px) skewX(25deg);
+    transform: translateX(-2rem) skewX(25deg);
     opacity: 1; }
   100% {
     transform: translateX(0) skewX(0);
+    opacity: 1; } }
+
+@keyframes moveInBottom {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
     opacity: 1; } }
 
 * {
@@ -27,109 +35,115 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 112.5em) {
+    html {
+      font-size: 53%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 35%; } }
   @media (max-width: 50.625em) {
     html {
-      font-size: 45%; } }
+      font-size: 30%; } }
   @media (max-width: 37.125em) {
     html {
-      font-size: 37%; } }
-  @media (max-width: 25em) {
+      font-size: 22%; } }
+  @media (max-width: 23.75em) {
     html {
-      font-size: 30%; } }
+      font-size: 20%; } }
 
 body {
   box-sizing: border-box;
-  color: #eef;
+  background-color: #080822;
+  padding: 3rem; }
+
+body {
   font-family: 'Lato', sans-serif;
-  padding: 1rem; }
+  font-weight: 400;
+  line-height: 1.7;
+  color: #eee; }
 
-header .title {
-  font-size: 4rem;
+.heading-primary {
+  font-size: 12rem;
   letter-spacing: 4rem;
-  color: #8af;
-  padding-left: 4rem; }
+  font-weight: 200;
+  margin-bottom: 4rem;
+  animation: moveInLeft .8s ease-out; }
+  @media (max-width: 75em) {
+    .heading-primary {
+      margin-bottom: 2rem; } }
+  @media (max-width: 37.125em) {
+    .heading-primary {
+      margin-bottom: 1rem; } }
 
-.background .result {
-  font-size: 4rem; }
-  @media (max-width: 50.625em) {
-    .background .result {
-      font-size: 4.4rem; } }
-  .background .result__value {
-    letter-spacing: 1.3rem; }
-    @media (max-width: 37.125em) {
-      .background .result__value {
-        letter-spacing: 1.3rem;
-        padding-left: .65rem;
-        text-align: center; } }
-  .background .result__label {
-    font-size: 4rem;
-    color: #8af; }
-    @media (max-width: 37.125em) {
-      .background .result__label {
-        text-align: center; } }
-    .background .result__label--h {
-      padding-left: 4.1rem; }
-      @media (max-width: 37.125em) {
-        .background .result__label--h {
-          padding-left: .65rem; } }
-    .background .result__label--m {
-      padding-left: 12rem; }
-    .background .result__label--s {
-      padding-left: 10rem; }
-
-.background .input__box {
-  font-size: 2.5rem; }
-  .background .input__box .input-value {
+.result {
+  font-size: 8rem;
+  text-align: center; }
+  .result__value {
+    letter-spacing: 1.3rem;
+    font-weight: 300; }
+  .result__label {
+    font-size: 2rem;
     font-weight: 700;
-    color: #8af;
-    text-align: center; }
+    position: relative;
+    bottom: 5rem;
+    color: #080822; }
+    @media (max-width: 50.625em) {
+      .result__label {
+        font-size: 6rem; } }
 
-header {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-  header .title {
-    animation: moviInLeft .8s; }
+.input {
+  font-size: 3rem;
+  color: #5e8cff;
+  text-align: center; }
+  @media (max-width: 37.125em) {
+    .input {
+      font-size: 6rem; } }
 
 .background {
-  height: 95vh;
-  background-image: linear-gradient(to bottom right, rgba(136, 170, 255, 0.9), rgba(17, 17, 68, 0.9)), url("../images/raptor.jpg");
-  background-position: center;
+  height: 90vh;
+  background-image: linear-gradient(to bottom right, rgba(94, 140, 255, 0.9), rgba(8, 8, 34, 0.9)), url("../images/raptor.jpg");
+  background-position: left;
   background-size: cover;
   border-radius: 3px;
   box-shadow: 0 .5rem .5rem black;
   position: relative; }
-  .background .result {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
+
+.app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.result {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  animation: moveInRight .8s ease-out; }
+  @media (max-width: 75em) {
+    .result {
+      margin-bottom: 3rem; } }
+  @media (max-width: 50.625em) {
+    .result {
+      width: 90%; } }
+  @media (max-width: 37.125em) {
+    .result {
+      margin-bottom: 4rem; } }
+
+.input {
+  animation: moveInBottom .8s ease-out .5s;
+  animation-fill-mode: backwards; }
+  .input__box:not(:last-child) {
+    margin-bottom: 3rem; }
+    @media (max-width: 75em) {
+      .input__box:not(:last-child) {
+        margin-bottom: 1rem; } }
+    @media (max-width: 50.625em) {
+      .input__box:not(:last-child) {
+        margin-bottom: 2rem; } }
     @media (max-width: 37.125em) {
-      .background .result {
-        width: 75%; } }
-    @media (max-width: 25em) {
-      .background .result {
-        width: 85%; } }
-    .background .result__value {
-      animation: moviInRight .8s; }
-    .background .result__label {
-      animation: moviInRight .8s; }
-  .background .input {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-    @media (max-width: 37.125em) {
-      .background .input {
-        width: 75%; } }
-    @media (max-width: 25em) {
-      .background .input {
-        width: 85%; } }
-    .background .input__box:not(:last-child) {
-      margin-bottom: 4rem; }
-    .background .input__box .input-value {
-      display: inline-block;
-      min-width: 10rem; }
-    .background .input input[type="range"] {
-      width: 100%; }
+      .input__box:not(:last-child) {
+        margin-bottom: 1rem; } }
+  .input__label {
+    display: block; }
+  .input input[type="range"] {
+    width: 100%; }

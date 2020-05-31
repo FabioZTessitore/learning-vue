@@ -1,66 +1,71 @@
 .background {
-  height: 95vh;
+  height: 90vh;
   background-image:
     linear-gradient(to bottom right,
       rgba($color-primary-light, .9),
       rgba($color-primary-dark, .9)),
     url('../images/raptor.jpg');
-  background-position: center;
+  background-position: left;
   background-size: cover;
   border-radius: 3px;
   box-shadow: 0 .5rem .5rem black;
   position: relative;
+}
 
-  .result {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-    @include respond($big-phone) {
-      width: 75%;
-    }
+.result {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  
+  animation: moveInRight .8s ease-out;
 
-    @include respond($phone) {
-      width: 85%;
-    }
-    
-    &__value {
-      animation: moviInRight .8s;
-    }
-
-    &__label {
-      animation: moviInRight .8s;
-    }
+  @include respond($tab-land) {
+    margin-bottom: 3rem;
+  }
+  
+  @include respond($tab-por) {
+    width: 90%;
   }
 
-  .input {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  @include respond($big-phone) {
+    margin-bottom: 4rem;
+  }
+}
 
-    @include respond($big-phone) {
-      width: 75%;
-    }
+.input {
+  animation: moveInBottom .8s ease-out .5s;
+  animation-fill-mode: backwards;
 
-    @include respond($phone) {
-      width: 85%;
-    }
+  &__box {
+    &:not(:last-child) {
+      margin-bottom: 3rem;
 
-    &__box {
-      &:not(:last-child) {
-        margin-bottom: 4rem;
+      @include respond($tab-land) {
+        margin-bottom: 1rem;
       }
 
-      .input-value {
-        display: inline-block;
-        min-width: 10rem;
+      @include respond($tab-por) {
+        margin-bottom: 2rem;
+      }
+
+      @include respond($big-phone) {
+        margin-bottom: 1rem;
       }
     }
-
-    input[type="range"] {
-      width: 100%;
-    }
+  }
+    
+  &__label {
+    display: block;
+  }
+  
+  input[type="range"] {
+    width: 100%;
   }
 }

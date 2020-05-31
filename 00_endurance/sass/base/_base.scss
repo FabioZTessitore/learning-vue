@@ -1,28 +1,38 @@
 * {
   margin: 0;
   padding: 0;
+
   box-sizing: inherit;
 }
 
 html {
   font-size: 62.5%;
 
+  @include respond($big-desktop) {
+    font-size: 53%;
+  }
+
+  @include respond($tab-land) {
+    font-size: 35%;
+  }
+
   @include respond($tab-por) {
-    font-size: 45%;
+    font-size: 30%;
   }
 
   @include respond($big-phone) {
-    font-size: 37%;
+    font-size: 22%;
   }
   
   @include respond($phone) {
-    font-size: 30%;
+    font-size: 20%;
   }
 }
 
 body {
   box-sizing: border-box;
-  color: $color-primary;
-  font-family: 'Lato', sans-serif;
-  padding: 1rem;
+
+  background-color: $color-primary-dark;
+
+  padding: 3rem;
 }

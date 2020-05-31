@@ -1,94 +1,73 @@
 <!doctype html>
+
 <html class="no-js" lang="it">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <title>Endurance</title>
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  
+  <title>Endurance</title>
 </head>
 
 <body>
-  <div class="background" id="app">
-    <header>
-      <h1 class="title">Endurance</h1>
-    </header>
-
-    <main>
-        <section class="result">
-          <p class="result__value">{{ hhh }} : {{ mm }} : {{ ss }}</p>
-          <p class="result__label">
-            <span class="result__label--h">h</span>
-            <span class="result__label--m">m</span>
-            <span class="result__label--s">s</span>
-          </p>
-        </section>
-
-        <section class="input">
-          <div class="input__box">
-            <label for="carburante">Carburante: <span class="input-value">{{ CC }}</span> galloni</label>
-            <input type="range" min="0" max="1999" v-bind:value="CC" v-on:input="changeCC" name="carburante" id="carburante">
-          </div>
-          <div class="input__box">
-            <label for="consumoh">Consumo Orario: <span class="input-value">{{ CH }}</span> galloni/h</label>
-            <input type="range" min="5" max="300" v-bind:value="CH" v-on:input="changeCH" name="consumoh" id="consumoh">
-          </div>
-        </section>
-    </main>
-  </div> <!-- /background -->
+  <main class="background">
+    <div class="app" id="app">
+      <h1 class="heading-primary">Endurance</h1>
+      
+      <div class="result">
+        <p class="result__value">{{ endurance.h }}<span class="result__label">h</span> :
+                                 {{ endurance.m }}<span class="result__label">m</span> :
+                                 {{ endurance.s }}<span class="result__label">s</span>
+        </p>
+      </div>
+      
+      <div class="input">
+        <div class="input__box">
+          <label for="fuel" class="input__label">Fuel: {{ CC }} gallons</label>
+          <input type="range" min="0" max="1999" v-model="CC" name="fuel" id="fuel">
+        </div>
+        <div class="input__box">
+          <label for="fuelh" class="input__label">Fuel per hour: {{ CH }} gallons/h</label>
+          <input type="range" min="5" max="300" v-model="CH" name="consumoh" id="consumoh">
+        </div>
+      </div>
+    </div>
+  </main>
 
   <script>
+  const format = function (value, n) {
+    return ("0".repeat(n)+value).slice(-n);
+  };
+
   var cc = new Vue({
     el: '#app',
     data: {
       CC: 1000,
-      CH: 150,
-      h: 6,
-      m: 40,
-      s: 0
+      CH: 150
     },
+
     computed: {
-      hhh: function () {
-        return this.threeChar(this.h);
-      },
-      mm: function () {
-        return this.twoChar(this.m);
-      },
-      ss: function () {
-        return this.twoChar(this.s);
-      },
-    },
-    methods: {
-      changeCC: function (event) {
-        this.CC = event.target.value;
-        this.calculateEndurance();
-      },
-
-      changeCH: function (event) {
-        this.CH = event.target.value;
-        this.calculateEndurance();
-      },
-
-      calculateEndurance: function () {
-        var t = this.CC / this.CH;
-        this.h = Math.floor(t);
-        t -= this.h;
+      endurance () {
+        let t = this.CC / this.CH;
+        const h = Math.floor(t);
+        t -= h;
         t *= 60;
-        this.m = Math.floor(t);
-        t -= this.m;
+        const m = Math.floor(t);
+        t -= m;
         t *= 60;
-        this.s = Math.floor(t);
-      },
+        const s = Math.floor(t);
 
-      twoChar: function (value) {
-        return ("0" + value).slice(-2);
-      },
-      threeChar: function (value) {
-        return ("00" + value).slice(-3);
+        return {
+          h: format(h, 3),
+          m: format(m, 2),
+          s: format(s, 2)
+        };
       }
     }
   });
